@@ -1,0 +1,859 @@
+{
+  "stage": "step6–step7",
+  "database": {
+    "name": "campus_dining_partner",
+    "mysql_version": "8.0.46",
+    "engine": "InnoDB",
+    "charset": "utf8mb4",
+    "collation": "utf8mb4_0900_as_cs",
+    "session_time_zone": "+08:00",
+    "transaction_isolation": "REPEATABLE READ",
+    "sql_mode": "ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION",
+    "index_type": "BTREE"
+  },
+  "default_sql_semantics": "JSON null 表示不声明 DEFAULT；字符串 NULL 表示 DEFAULT NULL；其他字符串为 SQL 默认值表达式",
+  "tables": [
+    {
+      "table": "users",
+      "name": "用户",
+      "columns": [
+        {
+          "name": "user_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": true,
+          "meaning": "用户编号"
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR(32)",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "登录用户名，去除首尾普通空格，区分大小写和重音，用户间唯一"
+        },
+        {
+          "name": "nickname",
+          "type": "VARCHAR(32)",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "昵称，允许重名，不能只含普通空格"
+        },
+        {
+          "name": "password_hash",
+          "type": "VARCHAR(255)",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "后端生成的密码摘要"
+        },
+        {
+          "name": "preferred_slot",
+          "type": "VARCHAR(10)",
+          "nullable": true,
+          "default_sql": "NULL",
+          "auto_increment": false,
+          "meaning": "BREAKFAST、LUNCH、DINNER、LATE_NIGHT；NULL 表示无偏好"
+        },
+        {
+          "name": "created_at",
+          "type": "DATETIME(0)",
+          "nullable": false,
+          "default_sql": "CURRENT_TIMESTAMP",
+          "auto_increment": false,
+          "meaning": "记录创建时间，创建后不刷新"
+        }
+      ],
+      "primary_key": {
+        "name": "PRIMARY",
+        "columns": [
+          "user_id"
+        ]
+      },
+      "unique_keys": [
+        {
+          "name": "uq_users_username",
+          "columns": [
+            "username"
+          ]
+        }
+      ],
+      "foreign_keys": [],
+      "checks": [
+        {
+          "name": "ck_users_username",
+          "expression": "CHAR_LENGTH(TRIM(username)) > 0 AND username = TRIM(username)",
+          "meaning": "用户名非空，且不保留首尾普通空格",
+          "enforced": true
+        },
+        {
+          "name": "ck_users_nickname",
+          "expression": "CHAR_LENGTH(TRIM(nickname)) > 0",
+          "meaning": "昵称不能是空串或仅由普通空格组成",
+          "enforced": true
+        },
+        {
+          "name": "ck_users_preferred_slot",
+          "expression": "preferred_slot IS NULL OR preferred_slot IN ('BREAKFAST', 'LUNCH', 'DINNER', 'LATE_NIGHT')",
+          "meaning": "偏好时段只取四个值或 NULL",
+          "enforced": true
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table": "canteens",
+      "name": "食堂",
+      "columns": [
+        {
+          "name": "canteen_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": true,
+          "meaning": "食堂编号"
+        },
+        {
+          "name": "canteen_name",
+          "type": "VARCHAR(64)",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "食堂显示名称，不能只含普通空格"
+        }
+      ],
+      "primary_key": {
+        "name": "PRIMARY",
+        "columns": [
+          "canteen_id"
+        ]
+      },
+      "unique_keys": [],
+      "foreign_keys": [],
+      "checks": [
+        {
+          "name": "ck_canteens_name",
+          "expression": "CHAR_LENGTH(TRIM(canteen_name)) > 0",
+          "meaning": "食堂名称不能为空串或只有普通空格",
+          "enforced": true
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table": "stalls",
+      "name": "档口",
+      "columns": [
+        {
+          "name": "stall_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": true,
+          "meaning": "档口编号"
+        },
+        {
+          "name": "canteen_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "食堂编号"
+        },
+        {
+          "name": "stall_name",
+          "type": "VARCHAR(64)",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "档口显示名称，不能只含普通空格"
+        }
+      ],
+      "primary_key": {
+        "name": "PRIMARY",
+        "columns": [
+          "stall_id"
+        ]
+      },
+      "unique_keys": [],
+      "foreign_keys": [
+        {
+          "name": "fk_stalls_canteen",
+          "columns": [
+            "canteen_id"
+          ],
+          "reference_table": "canteens",
+          "reference_columns": [
+            "canteen_id"
+          ],
+          "on_delete": "RESTRICT",
+          "on_update": "RESTRICT"
+        }
+      ],
+      "checks": [
+        {
+          "name": "ck_stalls_name",
+          "expression": "CHAR_LENGTH(TRIM(stall_name)) > 0",
+          "meaning": "档口名称不能为空串或只有普通空格",
+          "enforced": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_stalls_canteen",
+          "columns": [
+            "canteen_id"
+          ],
+          "purpose": "查询食堂所属档口，并支撑食堂外键"
+        }
+      ]
+    },
+    {
+      "table": "dining_events",
+      "name": "饭局",
+      "columns": [
+        {
+          "name": "event_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": true,
+          "meaning": "饭局编号"
+        },
+        {
+          "name": "host_user_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "发起人编号，引用 users.user_id"
+        },
+        {
+          "name": "stall_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "档口编号"
+        },
+        {
+          "name": "title",
+          "type": "VARCHAR(100)",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "饭局标题，不能只含普通空格"
+        },
+        {
+          "name": "meal_time",
+          "type": "DATETIME(0)",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "北京时间的计划就餐时间"
+        },
+        {
+          "name": "capacity",
+          "type": "SMALLINT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "包含发起人的总人数上限，范围为 2 至 65535"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR(500)",
+          "nullable": true,
+          "default_sql": "NULL",
+          "auto_increment": false,
+          "meaning": "饭局说明，未填写时为 NULL"
+        },
+        {
+          "name": "cancelled_at",
+          "type": "DATETIME(0)",
+          "nullable": true,
+          "default_sql": "NULL",
+          "auto_increment": false,
+          "meaning": "取消时间，未取消时为 NULL"
+        },
+        {
+          "name": "created_at",
+          "type": "DATETIME(0)",
+          "nullable": false,
+          "default_sql": "CURRENT_TIMESTAMP",
+          "auto_increment": false,
+          "meaning": "记录创建时间，创建后不刷新"
+        }
+      ],
+      "primary_key": {
+        "name": "PRIMARY",
+        "columns": [
+          "event_id"
+        ]
+      },
+      "unique_keys": [],
+      "foreign_keys": [
+        {
+          "name": "fk_events_host",
+          "columns": [
+            "host_user_id"
+          ],
+          "reference_table": "users",
+          "reference_columns": [
+            "user_id"
+          ],
+          "on_delete": "RESTRICT",
+          "on_update": "RESTRICT"
+        },
+        {
+          "name": "fk_events_stall",
+          "columns": [
+            "stall_id"
+          ],
+          "reference_table": "stalls",
+          "reference_columns": [
+            "stall_id"
+          ],
+          "on_delete": "RESTRICT",
+          "on_update": "RESTRICT"
+        }
+      ],
+      "checks": [
+        {
+          "name": "ck_events_title",
+          "expression": "CHAR_LENGTH(TRIM(title)) > 0",
+          "meaning": "标题不能为空串或只有普通空格",
+          "enforced": true
+        },
+        {
+          "name": "ck_events_capacity",
+          "expression": "capacity >= 2",
+          "meaning": "总人数上限至少为 2",
+          "enforced": true
+        },
+        {
+          "name": "ck_events_meal_time",
+          "expression": "meal_time > created_at",
+          "meaning": "计划就餐时间晚于饭局创建时间",
+          "enforced": true
+        },
+        {
+          "name": "ck_events_cancel_time",
+          "expression": "cancelled_at IS NULL OR (cancelled_at >= created_at AND cancelled_at < meal_time)",
+          "meaning": "取消时间位于创建时间与计划就餐时间之间，或未取消",
+          "enforced": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_events_active_time",
+          "columns": [
+            "cancelled_at",
+            "meal_time"
+          ],
+          "purpose": "未取消饭局的时间范围查询、公开列表和推荐候选筛选"
+        },
+        {
+          "name": "idx_events_stall_active_time",
+          "columns": [
+            "stall_id",
+            "cancelled_at",
+            "meal_time"
+          ],
+          "purpose": "按档口筛选未取消饭局，并支撑档口外键"
+        },
+        {
+          "name": "idx_events_host_time",
+          "columns": [
+            "host_user_id",
+            "meal_time"
+          ],
+          "purpose": "本人发起记录与发起次数查询，并支撑发起人外键"
+        }
+      ]
+    },
+    {
+      "table": "registrations",
+      "name": "报名记录",
+      "columns": [
+        {
+          "name": "event_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "饭局编号"
+        },
+        {
+          "name": "user_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "用户编号"
+        },
+        {
+          "name": "registration_status",
+          "type": "VARCHAR(6)",
+          "nullable": false,
+          "default_sql": "'JOINED'",
+          "auto_increment": false,
+          "meaning": "JOINED 表示已报名；EXITED 表示已退出"
+        },
+        {
+          "name": "last_joined_at",
+          "type": "DATETIME(0)",
+          "nullable": false,
+          "default_sql": "CURRENT_TIMESTAMP",
+          "auto_increment": false,
+          "meaning": "最近一次报名时间；发起人取饭局 created_at"
+        },
+        {
+          "name": "last_exited_at",
+          "type": "DATETIME(0)",
+          "nullable": true,
+          "default_sql": "NULL",
+          "auto_increment": false,
+          "meaning": "最近一次退出时间，从未退出时为 NULL"
+        }
+      ],
+      "primary_key": {
+        "name": "PRIMARY",
+        "columns": [
+          "event_id",
+          "user_id"
+        ]
+      },
+      "unique_keys": [],
+      "foreign_keys": [
+        {
+          "name": "fk_registrations_event",
+          "columns": [
+            "event_id"
+          ],
+          "reference_table": "dining_events",
+          "reference_columns": [
+            "event_id"
+          ],
+          "on_delete": "RESTRICT",
+          "on_update": "RESTRICT"
+        },
+        {
+          "name": "fk_registrations_user",
+          "columns": [
+            "user_id"
+          ],
+          "reference_table": "users",
+          "reference_columns": [
+            "user_id"
+          ],
+          "on_delete": "RESTRICT",
+          "on_update": "RESTRICT"
+        }
+      ],
+      "checks": [
+        {
+          "name": "ck_registrations_status",
+          "expression": "registration_status IN ('JOINED', 'EXITED')",
+          "meaning": "报名状态只取两个值",
+          "enforced": true
+        },
+        {
+          "name": "ck_registrations_exit_time",
+          "expression": "registration_status <> 'EXITED' OR last_exited_at IS NOT NULL",
+          "meaning": "已退出记录必须具有退出时间",
+          "enforced": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_registrations_event_status",
+          "columns": [
+            "event_id",
+            "registration_status"
+          ],
+          "purpose": "按饭局统计已报名人数与查询有效报名名单"
+        },
+        {
+          "name": "idx_registrations_user_status",
+          "columns": [
+            "user_id",
+            "registration_status"
+          ],
+          "purpose": "本人报名记录与参与次数查询，并支撑用户外键"
+        }
+      ]
+    },
+    {
+      "table": "taste_tags",
+      "name": "口味标签",
+      "columns": [
+        {
+          "name": "tag_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": true,
+          "meaning": "口味标签编号"
+        },
+        {
+          "name": "tag_name",
+          "type": "VARCHAR(16)",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "六个固定口味标签中的一个，名称唯一"
+        }
+      ],
+      "primary_key": {
+        "name": "PRIMARY",
+        "columns": [
+          "tag_id"
+        ]
+      },
+      "unique_keys": [
+        {
+          "name": "uq_taste_tags_name",
+          "columns": [
+            "tag_name"
+          ]
+        }
+      ],
+      "foreign_keys": [],
+      "checks": [
+        {
+          "name": "ck_taste_tags_name",
+          "expression": "tag_name IN ('清淡', '香辣', '麻辣', '甜口', '咸鲜', '素食')",
+          "meaning": "标签名称来自固定集合",
+          "enforced": true
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table": "user_taste_preferences",
+      "name": "用户口味偏好",
+      "columns": [
+        {
+          "name": "user_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "用户编号"
+        },
+        {
+          "name": "tag_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "口味标签编号"
+        }
+      ],
+      "primary_key": {
+        "name": "PRIMARY",
+        "columns": [
+          "user_id",
+          "tag_id"
+        ]
+      },
+      "unique_keys": [],
+      "foreign_keys": [
+        {
+          "name": "fk_user_preferences_user",
+          "columns": [
+            "user_id"
+          ],
+          "reference_table": "users",
+          "reference_columns": [
+            "user_id"
+          ],
+          "on_delete": "RESTRICT",
+          "on_update": "RESTRICT"
+        },
+        {
+          "name": "fk_user_preferences_tag",
+          "columns": [
+            "tag_id"
+          ],
+          "reference_table": "taste_tags",
+          "reference_columns": [
+            "tag_id"
+          ],
+          "on_delete": "RESTRICT",
+          "on_update": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "indexes": [
+        {
+          "name": "idx_user_preferences_tag",
+          "columns": [
+            "tag_id"
+          ],
+          "purpose": "支撑口味标签外键"
+        }
+      ]
+    },
+    {
+      "table": "event_taste_tags",
+      "name": "饭局标签",
+      "columns": [
+        {
+          "name": "event_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "饭局编号"
+        },
+        {
+          "name": "tag_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "口味标签编号"
+        }
+      ],
+      "primary_key": {
+        "name": "PRIMARY",
+        "columns": [
+          "event_id",
+          "tag_id"
+        ]
+      },
+      "unique_keys": [],
+      "foreign_keys": [
+        {
+          "name": "fk_event_tags_event",
+          "columns": [
+            "event_id"
+          ],
+          "reference_table": "dining_events",
+          "reference_columns": [
+            "event_id"
+          ],
+          "on_delete": "RESTRICT",
+          "on_update": "RESTRICT"
+        },
+        {
+          "name": "fk_event_tags_tag",
+          "columns": [
+            "tag_id"
+          ],
+          "reference_table": "taste_tags",
+          "reference_columns": [
+            "tag_id"
+          ],
+          "on_delete": "RESTRICT",
+          "on_update": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "indexes": [
+        {
+          "name": "idx_event_tags_tag",
+          "columns": [
+            "tag_id"
+          ],
+          "purpose": "按标签筛选饭局，并支撑标签外键"
+        }
+      ]
+    },
+    {
+      "table": "stall_favorites",
+      "name": "档口收藏",
+      "columns": [
+        {
+          "name": "user_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "用户编号"
+        },
+        {
+          "name": "stall_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "档口编号"
+        },
+        {
+          "name": "favorited_at",
+          "type": "DATETIME(0)",
+          "nullable": false,
+          "default_sql": "CURRENT_TIMESTAMP",
+          "auto_increment": false,
+          "meaning": "当前收藏关联的建立时间"
+        }
+      ],
+      "primary_key": {
+        "name": "PRIMARY",
+        "columns": [
+          "user_id",
+          "stall_id"
+        ]
+      },
+      "unique_keys": [],
+      "foreign_keys": [
+        {
+          "name": "fk_stall_favorites_user",
+          "columns": [
+            "user_id"
+          ],
+          "reference_table": "users",
+          "reference_columns": [
+            "user_id"
+          ],
+          "on_delete": "RESTRICT",
+          "on_update": "RESTRICT"
+        },
+        {
+          "name": "fk_stall_favorites_stall",
+          "columns": [
+            "stall_id"
+          ],
+          "reference_table": "stalls",
+          "reference_columns": [
+            "stall_id"
+          ],
+          "on_delete": "RESTRICT",
+          "on_update": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "indexes": [
+        {
+          "name": "idx_stall_favorites_stall",
+          "columns": [
+            "stall_id"
+          ],
+          "purpose": "支撑档口外键"
+        }
+      ]
+    },
+    {
+      "table": "event_reviews",
+      "name": "饭局评价",
+      "columns": [
+        {
+          "name": "event_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "饭局编号"
+        },
+        {
+          "name": "user_id",
+          "type": "INT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "用户编号"
+        },
+        {
+          "name": "rating",
+          "type": "TINYINT UNSIGNED",
+          "nullable": false,
+          "default_sql": null,
+          "auto_increment": false,
+          "meaning": "1 至 5 的整数评分"
+        },
+        {
+          "name": "content",
+          "type": "VARCHAR(500)",
+          "nullable": true,
+          "default_sql": "NULL",
+          "auto_increment": false,
+          "meaning": "评价内容，未填写时为 NULL"
+        },
+        {
+          "name": "reviewed_at",
+          "type": "DATETIME(0)",
+          "nullable": false,
+          "default_sql": "CURRENT_TIMESTAMP",
+          "auto_increment": false,
+          "meaning": "评价提交时间"
+        }
+      ],
+      "primary_key": {
+        "name": "PRIMARY",
+        "columns": [
+          "event_id",
+          "user_id"
+        ]
+      },
+      "unique_keys": [],
+      "foreign_keys": [
+        {
+          "name": "fk_reviews_registration",
+          "columns": [
+            "event_id",
+            "user_id"
+          ],
+          "reference_table": "registrations",
+          "reference_columns": [
+            "event_id",
+            "user_id"
+          ],
+          "on_delete": "RESTRICT",
+          "on_update": "RESTRICT"
+        }
+      ],
+      "checks": [
+        {
+          "name": "ck_reviews_rating",
+          "expression": "rating BETWEEN 1 AND 5",
+          "meaning": "评分范围为 1 至 5",
+          "enforced": true
+        }
+      ],
+      "indexes": []
+    }
+  ],
+  "triggers": [
+    {
+      "name": "trg_dining_events_ai_host_registration",
+      "table": "dining_events",
+      "timing": "AFTER",
+      "event": "INSERT",
+      "for_each": "ROW",
+      "writes_table": "registrations",
+      "insert_columns": [
+        "event_id",
+        "user_id",
+        "registration_status",
+        "last_joined_at",
+        "last_exited_at"
+      ],
+      "insert_values_sql": [
+        "NEW.event_id",
+        "NEW.host_user_id",
+        "'JOINED'",
+        "NEW.created_at",
+        "NULL"
+      ],
+      "meaning": "饭局插入后自动建立发起人报名记录，与饭局插入同属当前发布事务"
+    }
+  ],
+  "creation_order": [
+    "users",
+    "canteens",
+    "stalls",
+    "dining_events",
+    "registrations",
+    "taste_tags",
+    "user_taste_preferences",
+    "event_taste_tags",
+    "stall_favorites",
+    "event_reviews",
+    "trg_dining_events_ai_host_registration"
+  ]
+}

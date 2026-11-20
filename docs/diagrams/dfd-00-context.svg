@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700">
+<title>系统上下文数据流图</title>
+<rect width="100%" height="100%" fill="white"/>
+<text x="800.0" y="42.0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">系统上下文数据流图</text>
+<text x="800.0" y="86.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">E1 为学生；E2 为通过初始化脚本提供基础资料的小组维护者</text>
+<polyline points="310,320 666,320" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="666,320 654.12984377594,325.3008858897744 654.12984377594,314.6991141102256" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="666,420 310,420" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="310,420 321.87015622406,414.6991141102256 321.87015622406,425.3008858897744" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="1290,320 934,320" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="934,320 945.87015622406,314.6991141102256 945.87015622406,325.3008858897744" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="934,420 1290,420" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="1290,420 1278.12984377594,425.3008858897744 1278.12984377594,414.6991141102256" fill="#202020" stroke="#202020" stroke-width="2"/>
+<rect x="90.0" y="295.0" width="220" height="150" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="200" y="353.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">E1</text>
+<text x="200" y="386.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">学生</text>
+<ellipse cx="800" cy="370" rx="155.0" ry="100.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="800" y="353.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">P0</text>
+<text x="800" y="386.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">校园饭搭子系统</text>
+<rect x="1290.0" y="295.0" width="220" height="150" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1400" y="353.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">E2</text>
+<text x="1400" y="386.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">基础资料维护者</text>
+<text x="480" y="184.2" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F01/F03/F05</text>
+<text x="480" y="215.0" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F07/F09/F11</text>
+<text x="480" y="245.8" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">业务请求</text>
+<text x="480" y="489.2" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F02/F04/F06</text>
+<text x="480" y="520.0" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F08/F10/F12</text>
+<text x="480" y="550.8" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">业务结果</text>
+<text x="1120" y="255.0" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F13 基础资料</text>
+<text x="1120" y="495.0" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F14 导入结果</text>
+<text x="800" y="640.0" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">请求与结果的完整组成见数据字典；上下文图不展开内部数据存储</text>
+</svg>

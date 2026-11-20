@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="1950" viewBox="0 0 1640 1950">
+<title>系统第一层数据流图</title>
+<rect width="100%" height="100%" fill="white"/>
+<text x="820.0" y="42.0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">系统第一层数据流图</text>
+<text x="820.0" y="86.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">E1 与 D0 重复绘制以减少交叉线；D0 汇总 D1 至 D10，不新增数据表</text>
+<polyline points="245,223 642,223" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="642,223 630.12984377594,228.3008858897744 630.12984377594,217.6991141102256" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="648,275 245,275" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="245,275 256.87015622406,269.6991141102256 256.87015622406,280.3008858897744" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="1270,223 838,223" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="838,223 849.87015622406,217.6991141102256 849.87015622406,228.3008858897744" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="832,275 1270,275" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="1270,275 1258.12984377594,280.3008858897744 1258.12984377594,269.6991141102256" fill="#202020" stroke="#202020" stroke-width="2"/>
+<rect x="55.0" y="195.0" width="190" height="100" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="150" y="228.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">E1</text>
+<text x="150" y="261.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">学生</text>
+<ellipse cx="740" cy="245" rx="105.0" ry="62.5" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="740" y="228.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">P1</text>
+<text x="740" y="261.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">账户</text>
+<polyline points="1580.0,195.0 1270.0,195.0 1270.0,295.0 1580.0,295.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1283.0,195.0 1283.0,295.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<text x="1430" y="228.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">D0</text>
+<text x="1430" y="261.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">业务数据库</text>
+<text x="435" y="185.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F01 账户请求</text>
+<text x="435" y="317.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F02 账户结果</text>
+<text x="1060" y="167.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">读 D1</text>
+<text x="1060" y="317.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">写 D1</text>
+<polyline points="245,473 642,473" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="642,473 630.12984377594,478.3008858897744 630.12984377594,467.6991141102256" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="648,525 245,525" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="245,525 256.87015622406,519.6991141102255 256.87015622406,530.3008858897745" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="1270,473 838,473" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="838,473 849.87015622406,467.6991141102256 849.87015622406,478.3008858897744" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="832,525 1270,525" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="1270,525 1258.12984377594,530.3008858897745 1258.12984377594,519.6991141102255" fill="#202020" stroke="#202020" stroke-width="2"/>
+<rect x="55.0" y="445.0" width="190" height="100" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="150" y="478.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">E1</text>
+<text x="150" y="511.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">学生</text>
+<ellipse cx="740" cy="495" rx="105.0" ry="62.5" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="740" y="478.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">P2</text>
+<text x="740" y="511.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">饭局管理与查询</text>
+<polyline points="1580.0,445.0 1270.0,445.0 1270.0,545.0 1580.0,545.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1283.0,445.0 1283.0,545.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<text x="1430" y="478.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">D0</text>
+<text x="1430" y="511.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">业务数据库</text>
+<text x="435" y="435.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F03 饭局请求</text>
+<text x="435" y="567.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F04 饭局结果</text>
+<text x="1060" y="403.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">读 D1/D2/D3/D4/D5</text>
+<text x="1060" y="431.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">D6/D8</text>
+<text x="1060" y="567.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">写 D4/D5/D8</text>
+<polyline points="245,723 642,723" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="642,723 630.12984377594,728.3008858897745 630.12984377594,717.6991141102255" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="648,775 245,775" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="245,775 256.87015622406,769.6991141102255 256.87015622406,780.3008858897745" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="1270,723 838,723" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="838,723 849.87015622406,717.6991141102255 849.87015622406,728.3008858897745" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="832,775 1270,775" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="1270,775 1258.12984377594,780.3008858897745 1258.12984377594,769.6991141102255" fill="#202020" stroke="#202020" stroke-width="2"/>
+<rect x="55.0" y="695.0" width="190" height="100" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="150" y="728.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">E1</text>
+<text x="150" y="761.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">学生</text>
+<ellipse cx="740" cy="745" rx="105.0" ry="62.5" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="740" y="728.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">P3</text>
+<text x="740" y="761.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">报名与退出</text>
+<polyline points="1580.0,695.0 1270.0,695.0 1270.0,795.0 1580.0,795.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1283.0,695.0 1283.0,795.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<text x="1430" y="728.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">D0</text>
+<text x="1430" y="761.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">业务数据库</text>
+<text x="435" y="685.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F05 报名退出请求</text>
+<text x="435" y="817.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F06 报名退出结果</text>
+<text x="1060" y="667.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">读 D4/D5</text>
+<text x="1060" y="817.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">写 D5</text>
+<polyline points="245,973 642,973" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="642,973 630.12984377594,978.3008858897745 630.12984377594,967.6991141102255" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="648,1025 245,1025" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="245,1025 256.87015622406,1019.6991141102255 256.87015622406,1030.3008858897745" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="1270,973 838,973" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="838,973 849.87015622406,967.6991141102255 849.87015622406,978.3008858897745" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="832,1025 1270,1025" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="1270,1025 1258.12984377594,1030.3008858897745 1258.12984377594,1019.6991141102255" fill="#202020" stroke="#202020" stroke-width="2"/>
+<rect x="55.0" y="945.0" width="190" height="100" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="150" y="978.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">E1</text>
+<text x="150" y="1011.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">学生</text>
+<ellipse cx="740" cy="995" rx="105.0" ry="62.5" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="740" y="978.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">P4</text>
+<text x="740" y="1011.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">偏好与收藏</text>
+<polyline points="1580.0,945.0 1270.0,945.0 1270.0,1045.0 1580.0,1045.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1283.0,945.0 1283.0,1045.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<text x="1430" y="978.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">D0</text>
+<text x="1430" y="1011.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">业务数据库</text>
+<text x="435" y="935.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F07 偏好收藏请求</text>
+<text x="435" y="1067.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F08 偏好收藏结果</text>
+<text x="1060" y="917.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">读 D1/D3/D6/D7/D9</text>
+<text x="1060" y="1067.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">写 D1/D7/D9</text>
+<polyline points="245,1223 642,1223" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="642,1223 630.12984377594,1228.3008858897745 630.12984377594,1217.6991141102255" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="648,1275 245,1275" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="245,1275 256.87015622406,1269.6991141102255 256.87015622406,1280.3008858897745" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="1270,1223 838,1223" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="838,1223 849.87015622406,1217.6991141102255 849.87015622406,1228.3008858897745" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="832,1275 1270,1275" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="1270,1275 1258.12984377594,1280.3008858897745 1258.12984377594,1269.6991141102255" fill="#202020" stroke="#202020" stroke-width="2"/>
+<rect x="55.0" y="1195.0" width="190" height="100" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="150" y="1228.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">E1</text>
+<text x="150" y="1261.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">学生</text>
+<ellipse cx="740" cy="1245" rx="105.0" ry="62.5" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="740" y="1228.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">P5</text>
+<text x="740" y="1261.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">评价</text>
+<polyline points="1580.0,1195.0 1270.0,1195.0 1270.0,1295.0 1580.0,1295.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1283.0,1195.0 1283.0,1295.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<text x="1430" y="1228.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">D0</text>
+<text x="1430" y="1261.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">业务数据库</text>
+<text x="435" y="1185.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F09 评价请求</text>
+<text x="435" y="1317.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F10 评价结果</text>
+<text x="1060" y="1167.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">读 D4/D5/D10</text>
+<text x="1060" y="1317.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">写 D10</text>
+<polyline points="245,1473 642,1473" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="642,1473 630.12984377594,1478.3008858897745 630.12984377594,1467.6991141102255" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="648,1525 245,1525" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="245,1525 256.87015622406,1519.6991141102255 256.87015622406,1530.3008858897745" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="1270,1473 838,1473" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="838,1473 849.87015622406,1467.6991141102255 849.87015622406,1478.3008858897745" fill="#202020" stroke="#202020" stroke-width="2"/>
+<rect x="55.0" y="1445.0" width="190" height="100" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="150" y="1478.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">E1</text>
+<text x="150" y="1511.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">学生</text>
+<ellipse cx="740" cy="1495" rx="105.0" ry="62.5" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="740" y="1478.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">P6</text>
+<text x="740" y="1511.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">统计与推荐</text>
+<polyline points="1580.0,1445.0 1270.0,1445.0 1270.0,1545.0 1580.0,1545.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1283.0,1445.0 1283.0,1545.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<text x="1430" y="1478.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">D0</text>
+<text x="1430" y="1511.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">业务数据库</text>
+<text x="435" y="1435.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F11 统计推荐请求</text>
+<text x="435" y="1567.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F12 统计推荐结果</text>
+<text x="1060" y="1403.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">读 D1/D2/D3/D4/D5</text>
+<text x="1060" y="1431.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">D6/D7/D8/D9</text>
+<polyline points="245,1723 642,1723" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="642,1723 630.12984377594,1728.3008858897745 630.12984377594,1717.6991141102255" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="648,1775 245,1775" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="245,1775 256.87015622406,1769.6991141102255 256.87015622406,1780.3008858897745" fill="#202020" stroke="#202020" stroke-width="2"/>
+<polyline points="832,1775 1270,1775" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="1270,1775 1258.12984377594,1780.3008858897745 1258.12984377594,1769.6991141102255" fill="#202020" stroke="#202020" stroke-width="2"/>
+<rect x="55.0" y="1695.0" width="190" height="100" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="150" y="1728.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">E2</text>
+<text x="150" y="1761.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">资料维护者</text>
+<ellipse cx="740" cy="1745" rx="105.0" ry="62.5" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="740" y="1728.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">P7</text>
+<text x="740" y="1761.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">基础资料导入</text>
+<polyline points="1580.0,1695.0 1270.0,1695.0 1270.0,1795.0 1580.0,1795.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1283.0,1695.0 1283.0,1795.0" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<text x="1430" y="1728.9" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">D0</text>
+<text x="1430" y="1761.1" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">业务数据库</text>
+<text x="435" y="1685.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F13 基础资料</text>
+<text x="435" y="1817.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">F14 导入结果</text>
+<text x="1060" y="1817.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">写 D2/D3/D6</text>
+<text x="820" y="1880.0" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">圆形为处理，矩形为外部实体，开口双线框为数据存储，箭头表示数据流向</text>
+</svg>

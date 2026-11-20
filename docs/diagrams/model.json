@@ -1,0 +1,40 @@
+{
+  "entities": [
+    {"id": "user", "name": "用户", "attributes": [{"name": "用户编号", "key": true}, {"name": "用户名"}, {"name": "昵称"}, {"name": "密码摘要"}, {"name": "偏好时段"}, {"name": "注册时间"}]},
+    {"id": "canteen", "name": "食堂", "attributes": [{"name": "食堂编号", "key": true}, {"name": "食堂名称"}]},
+    {"id": "stall", "name": "档口", "attributes": [{"name": "档口编号", "key": true}, {"name": "档口名称"}]},
+    {"id": "event", "name": "饭局", "attributes": [{"name": "饭局编号", "key": true}, {"name": "标题"}, {"name": "计划就餐时间"}, {"name": "人数上限"}, {"name": "说明"}, {"name": "取消时间"}, {"name": "创建时间"}]},
+    {"id": "tag", "name": "口味标签", "attributes": [{"name": "标签编号", "key": true}, {"name": "标签名称"}]}
+  ],
+  "relationships": [
+    {"id": "contains", "name": "包含", "left": "canteen", "right": "stall", "cardinality": ["1", "N"], "attributes": []},
+    {"id": "venue", "name": "安排", "left": "stall", "right": "event", "cardinality": ["1", "N"], "attributes": []},
+    {"id": "hosts", "name": "发起", "left": "user", "right": "event", "cardinality": ["1", "N"], "attributes": []},
+    {"id": "registers", "name": "报名", "left": "user", "right": "event", "cardinality": ["M", "N"], "attributes": [{"name": "报名状态"}, {"name": "最近报名时间"}, {"name": "最近退出时间"}]},
+    {"id": "prefers", "name": "偏好", "left": "user", "right": "tag", "cardinality": ["M", "N"], "attributes": []},
+    {"id": "labels", "name": "标注", "left": "event", "right": "tag", "cardinality": ["M", "N"], "attributes": []},
+    {"id": "favorites", "name": "收藏", "left": "user", "right": "stall", "cardinality": ["M", "N"], "attributes": [{"name": "收藏时间"}]},
+    {"id": "reviews", "name": "评价", "left": "user", "right": "event", "cardinality": ["M", "N"], "attributes": [{"name": "评分"}, {"name": "评价内容"}, {"name": "评价时间"}]}
+  ],
+  "relations": [
+    {"id": "D1", "name": "用户", "table": "users", "fields": ["user_id", "username", "nickname", "password_hash", "preferred_slot", "created_at"], "pk": ["user_id"], "candidate_keys": [["user_id"], ["username"]], "fks": []},
+    {"id": "D2", "name": "食堂", "table": "canteens", "fields": ["canteen_id", "canteen_name"], "pk": ["canteen_id"], "candidate_keys": [["canteen_id"]], "fks": []},
+    {"id": "D3", "name": "档口", "table": "stalls", "fields": ["stall_id", "canteen_id", "stall_name"], "pk": ["stall_id"], "candidate_keys": [["stall_id"]], "fks": [{"fields": ["canteen_id"], "table": "canteens", "references": ["canteen_id"]}]},
+    {"id": "D4", "name": "饭局", "table": "dining_events", "fields": ["event_id", "host_user_id", "stall_id", "title", "meal_time", "capacity", "description", "cancelled_at", "created_at"], "pk": ["event_id"], "candidate_keys": [["event_id"]], "fks": [{"fields": ["host_user_id"], "table": "users", "references": ["user_id"]}, {"fields": ["stall_id"], "table": "stalls", "references": ["stall_id"]}]},
+    {"id": "D5", "name": "报名记录", "table": "registrations", "fields": ["event_id", "user_id", "registration_status", "last_joined_at", "last_exited_at"], "pk": ["event_id", "user_id"], "candidate_keys": [["event_id", "user_id"]], "fks": [{"fields": ["event_id"], "table": "dining_events", "references": ["event_id"]}, {"fields": ["user_id"], "table": "users", "references": ["user_id"]}]},
+    {"id": "D6", "name": "口味标签", "table": "taste_tags", "fields": ["tag_id", "tag_name"], "pk": ["tag_id"], "candidate_keys": [["tag_id"], ["tag_name"]], "fks": []},
+    {"id": "D7", "name": "用户口味偏好", "table": "user_taste_preferences", "fields": ["user_id", "tag_id"], "pk": ["user_id", "tag_id"], "candidate_keys": [["user_id", "tag_id"]], "fks": [{"fields": ["user_id"], "table": "users", "references": ["user_id"]}, {"fields": ["tag_id"], "table": "taste_tags", "references": ["tag_id"]}]},
+    {"id": "D8", "name": "饭局标签", "table": "event_taste_tags", "fields": ["event_id", "tag_id"], "pk": ["event_id", "tag_id"], "candidate_keys": [["event_id", "tag_id"]], "fks": [{"fields": ["event_id"], "table": "dining_events", "references": ["event_id"]}, {"fields": ["tag_id"], "table": "taste_tags", "references": ["tag_id"]}]},
+    {"id": "D9", "name": "档口收藏", "table": "stall_favorites", "fields": ["user_id", "stall_id", "favorited_at"], "pk": ["user_id", "stall_id"], "candidate_keys": [["user_id", "stall_id"]], "fks": [{"fields": ["user_id"], "table": "users", "references": ["user_id"]}, {"fields": ["stall_id"], "table": "stalls", "references": ["stall_id"]}]},
+    {"id": "D10", "name": "饭局评价", "table": "event_reviews", "fields": ["event_id", "user_id", "rating", "content", "reviewed_at"], "pk": ["event_id", "user_id"], "candidate_keys": [["event_id", "user_id"]], "fks": [{"fields": ["event_id", "user_id"], "table": "registrations", "references": ["event_id", "user_id"]}]}
+  ],
+  "processes": [
+    {"id": "P1", "name": "账户", "input": "F01 账户请求", "output": "F02 账户结果", "reads": ["D1"], "writes": ["D1"]},
+    {"id": "P2", "name": "饭局管理与查询", "input": "F03 饭局请求", "output": "F04 饭局结果", "reads": ["D1", "D2", "D3", "D4", "D5", "D6", "D8"], "writes": ["D4", "D5", "D8"]},
+    {"id": "P3", "name": "报名与退出", "input": "F05 报名退出请求", "output": "F06 报名退出结果", "reads": ["D4", "D5"], "writes": ["D5"]},
+    {"id": "P4", "name": "偏好与收藏", "input": "F07 偏好收藏请求", "output": "F08 偏好收藏结果", "reads": ["D1", "D3", "D6", "D7", "D9"], "writes": ["D1", "D7", "D9"]},
+    {"id": "P5", "name": "评价", "input": "F09 评价请求", "output": "F10 评价结果", "reads": ["D4", "D5", "D10"], "writes": ["D10"]},
+    {"id": "P6", "name": "统计与推荐", "input": "F11 统计推荐请求", "output": "F12 统计推荐结果", "reads": ["D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9"], "writes": []},
+    {"id": "P7", "name": "基础资料导入", "input": "F13 基础资料", "output": "F14 导入结果", "reads": [], "writes": ["D2", "D3", "D6"]}
+  ]
+}

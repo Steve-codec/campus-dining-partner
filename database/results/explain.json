@@ -1,0 +1,78 @@
+[
+  {
+    "section": "PLAN_PUBLIC",
+    "rows": [
+      {
+        "id": "1",
+        "select_type": "SIMPLE",
+        "table": "dining_events",
+        "partitions": "NULL",
+        "type": "range",
+        "possible_keys": "idx_events_active_time,idx_events_stall_active_time",
+        "key": "idx_events_active_time",
+        "key_len": "11",
+        "ref": "NULL",
+        "rows": "9",
+        "filtered": "100.00",
+        "Extra": "Using where; Using index"
+      }
+    ]
+  },
+  {
+    "section": "PLAN_STALL",
+    "rows": [
+      {
+        "id": "1",
+        "select_type": "SIMPLE",
+        "table": "dining_events",
+        "partitions": "NULL",
+        "type": "range",
+        "possible_keys": "idx_events_active_time,idx_events_stall_active_time",
+        "key": "idx_events_stall_active_time",
+        "key_len": "15",
+        "ref": "NULL",
+        "rows": "2",
+        "filtered": "100.00",
+        "Extra": "Using where; Using index"
+      }
+    ]
+  },
+  {
+    "section": "PLAN_COUNTS",
+    "rows": [
+      {
+        "id": "1",
+        "select_type": "SIMPLE",
+        "table": "registrations",
+        "partitions": "NULL",
+        "type": "ref",
+        "possible_keys": "PRIMARY,idx_registrations_event_status,idx_registrations_user_status",
+        "key": "idx_registrations_event_status",
+        "key_len": "30",
+        "ref": "const,const",
+        "rows": "2",
+        "filtered": "100.00",
+        "Extra": "Using index"
+      }
+    ]
+  },
+  {
+    "section": "PLAN_USER",
+    "rows": [
+      {
+        "id": "1",
+        "select_type": "SIMPLE",
+        "table": "registrations",
+        "partitions": "NULL",
+        "type": "ref",
+        "possible_keys": "idx_registrations_event_status,idx_registrations_user_status",
+        "key": "idx_registrations_user_status",
+        "key_len": "4",
+        "ref": "const",
+        "rows": "6",
+        "filtered": "100.00",
+        "Extra": "Using index"
+      }
+    ]
+  }
+]

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1450" viewBox="0 0 2200 1450">
+<title>全局基本 E-R 图</title>
+<rect width="100%" height="100%" fill="white"/>
+<text x="1100.0" y="42.0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">全局基本 E-R 图</text>
+<text x="1100.0" y="86.0" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif"></text>
+<polyline points="440,650 910,540" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1070,540 1520,650" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="440,680 910,680" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1070,680 1520,680" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="440,710 910,820" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1070,820 1520,710" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="330,642 330,246" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="410,200 880,200" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1100,200 1200,200" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1360,200 1520,200" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="990,238 990,410 1550,410" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1630,456 1630,642" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="330,718 330,1150 540,1150" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="700,1150 880,1150" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1630,718 1630,1104" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1550,1150 1100,1150" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="220,680 185,680" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="270,718 180,868" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1630,162 1630,132" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1740,200 1820,200" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="930,162 800,132" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1050,162 1200,132" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1740,665 1850,610" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1740,690 1850,750" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1680,718 1900,870" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="950,1188 850,1288" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1030,1188 1150,1288" fill="none" stroke="#202020" stroke-width="2" stroke-linejoin="round"/>
+<rect x="220.0" y="642.0" width="220" height="76" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="330" y="680.0" text-anchor="middle" dominant-baseline="central" font-size="29" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">用户</text>
+<rect x="1520.0" y="642.0" width="220" height="76" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1630" y="680.0" text-anchor="middle" dominant-baseline="central" font-size="29" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">饭局</text>
+<rect x="880.0" y="162.0" width="220" height="76" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="990" y="200.0" text-anchor="middle" dominant-baseline="central" font-size="29" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">档口</text>
+<rect x="1520.0" y="162.0" width="220" height="76" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1630" y="200.0" text-anchor="middle" dominant-baseline="central" font-size="29" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">食堂</text>
+<rect x="880.0" y="1112.0" width="220" height="76" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="990" y="1150.0" text-anchor="middle" dominant-baseline="central" font-size="29" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">口味标签</text>
+<polygon points="910.0,540 990,494.0 1070.0,540 990,586.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="990" y="540.0" text-anchor="middle" dominant-baseline="central" font-size="26" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">发起</text>
+<polygon points="910.0,680 990,634.0 1070.0,680 990,726.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="990" y="680.0" text-anchor="middle" dominant-baseline="central" font-size="26" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">报名</text>
+<polygon points="910.0,820 990,774.0 1070.0,820 990,866.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="990" y="820.0" text-anchor="middle" dominant-baseline="central" font-size="26" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">评价</text>
+<polygon points="250.0,200 330,154.0 410.0,200 330,246.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="330" y="200.0" text-anchor="middle" dominant-baseline="central" font-size="26" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">收藏</text>
+<polygon points="1200.0,200 1280,154.0 1360.0,200 1280,246.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1280" y="200.0" text-anchor="middle" dominant-baseline="central" font-size="26" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">包含</text>
+<polygon points="1550.0,410 1630,364.0 1710.0,410 1630,456.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1630" y="410.0" text-anchor="middle" dominant-baseline="central" font-size="26" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">安排</text>
+<polygon points="540.0,1150 620,1104.0 700.0,1150 620,1196.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="620" y="1150.0" text-anchor="middle" dominant-baseline="central" font-size="26" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">偏好</text>
+<polygon points="1550.0,1150 1630,1104.0 1710.0,1150 1630,1196.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1630" y="1150.0" text-anchor="middle" dominant-baseline="central" font-size="26" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">标注</text>
+<rect x="553.25" y="580.92" width="23.5" height="32.160000000000004" fill="white"/>
+<text x="565" y="597.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">1</text>
+<rect x="1391.0" y="580.92" width="28.0" height="32.160000000000004" fill="white"/>
+<text x="1405" y="597.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">N</text>
+<rect x="549.0" y="639.92" width="32.0" height="32.160000000000004" fill="white"/>
+<text x="565" y="656.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">M</text>
+<rect x="1391.0" y="639.92" width="28.0" height="32.160000000000004" fill="white"/>
+<text x="1405" y="656.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">N</text>
+<rect x="549.0" y="748.92" width="32.0" height="32.160000000000004" fill="white"/>
+<text x="565" y="765.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">M</text>
+<rect x="1391.0" y="748.92" width="28.0" height="32.160000000000004" fill="white"/>
+<text x="1405" y="765.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">N</text>
+<rect x="289.0" y="433.92" width="32.0" height="32.160000000000004" fill="white"/>
+<text x="305" y="450.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">M</text>
+<rect x="666.0" y="159.92" width="28.0" height="32.160000000000004" fill="white"/>
+<text x="680" y="176.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">N</text>
+<rect x="1438.25" y="159.92" width="23.5" height="32.160000000000004" fill="white"/>
+<text x="1450" y="176.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">1</text>
+<rect x="1141.0" y="159.92" width="28.0" height="32.160000000000004" fill="white"/>
+<text x="1155" y="176.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">N</text>
+<rect x="1238.25" y="370.92" width="23.5" height="32.160000000000004" fill="white"/>
+<text x="1250" y="387.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">1</text>
+<rect x="1643.0" y="528.92" width="28.0" height="32.160000000000004" fill="white"/>
+<text x="1657" y="545.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">N</text>
+<rect x="289.0" y="938.92" width="32.0" height="32.160000000000004" fill="white"/>
+<text x="305" y="955.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">M</text>
+<rect x="776.0" y="1108.92" width="28.0" height="32.160000000000004" fill="white"/>
+<text x="790" y="1125.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">N</text>
+<rect x="1641.0" y="938.92" width="32.0" height="32.160000000000004" fill="white"/>
+<text x="1657" y="955.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">M</text>
+<rect x="1286.0" y="1108.92" width="28.0" height="32.160000000000004" fill="white"/>
+<text x="1300" y="1125.0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">N</text>
+<ellipse cx="105" cy="680" rx="80.0" ry="32.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="105" y="680.0" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">用户编号</text>
+<polyline points="59.0,694.95 151.0,694.95" fill="none" stroke="#202020" stroke-width="1.4" stroke-linejoin="round"/>
+<ellipse cx="180" cy="900" rx="80.0" ry="32.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="180" y="900.0" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">偏好时段</text>
+<ellipse cx="1630" cy="100" rx="80.0" ry="32.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1630" y="100.0" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">食堂编号</text>
+<polyline points="1584.0,114.95 1676.0,114.95" fill="none" stroke="#202020" stroke-width="1.4" stroke-linejoin="round"/>
+<ellipse cx="1900" cy="200" rx="80.0" ry="32.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1900" y="200.0" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">食堂名称</text>
+<ellipse cx="780" cy="100" rx="80.0" ry="32.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="780" y="100.0" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">档口编号</text>
+<polyline points="734.0,114.95 826.0,114.95" fill="none" stroke="#202020" stroke-width="1.4" stroke-linejoin="round"/>
+<ellipse cx="1210" cy="100" rx="80.0" ry="32.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1210" y="100.0" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">档口名称</text>
+<ellipse cx="1930" cy="610" rx="80.0" ry="32.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1930" y="610.0" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">饭局编号</text>
+<polyline points="1884.0,624.95 1976.0,624.95" fill="none" stroke="#202020" stroke-width="1.4" stroke-linejoin="round"/>
+<ellipse cx="1930" cy="750" rx="80.0" ry="32.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1930" y="750.0" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">标题</text>
+<ellipse cx="1930" cy="900" rx="89.0" ry="32.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1930" y="900.0" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">计划就餐时间</text>
+<ellipse cx="850" cy="1320" rx="80.0" ry="32.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="850" y="1320.0" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">标签编号</text>
+<polyline points="804.0,1334.95 896.0,1334.95" fill="none" stroke="#202020" stroke-width="1.4" stroke-linejoin="round"/>
+<ellipse cx="1150" cy="1320" rx="80.0" ry="32.0" fill="white" stroke="#202020" stroke-width="2"/>
+<text x="1150" y="1320.0" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">标签名称</text>
+<text x="1100" y="1402.0" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#202020" font-family="Heiti SC, PingFang SC, Noto Sans CJK SC, sans-serif">矩形为实体，菱形为联系，椭圆为属性；下划线为实体标识，数字表示最大基数</text>
+</svg>

@@ -1,0 +1,1858 @@
+{
+  "environment_label": "临时MySQL实例",
+  "connection": {
+    "host": "127.0.0.1",
+    "port": 13306,
+    "user": "root",
+    "database": "campus_dining_partner"
+  },
+  "environment": {
+    "mysql_version": "8.0.46",
+    "executed_at": "2026-11-20 14:45:09",
+    "time_zone": "+08:00",
+    "isolation_level": "REPEATABLE-READ",
+    "collation": "utf8mb4_0900_as_cs"
+  },
+  "scope": "数据库结构与 SQL 规则验证；后端接口与并发联调属于 step11",
+  "total": 108,
+  "passed": 108,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "元数据与实现规格一致",
+      "evidence": {
+        "columns": 39,
+        "foreign_keys": 12,
+        "checks": 13,
+        "index_names": 21
+      },
+      "passed": true,
+      "elapsed_ms": 195
+    },
+    {
+      "name": "数据库对象数量",
+      "evidence": {
+        "tables": 10,
+        "columns": 39,
+        "primary_keys": 10,
+        "unique_keys": 2,
+        "foreign_keys": 12,
+        "checks": 13,
+        "indexes": 21,
+        "triggers": 1
+      },
+      "passed": true,
+      "elapsed_ms": 40
+    },
+    {
+      "name": "测试数据行数",
+      "evidence": {
+        "users": 8,
+        "canteens": 3,
+        "stalls": 6,
+        "dining_events": 12,
+        "registrations": 25,
+        "taste_tags": 6,
+        "user_taste_preferences": 12,
+        "event_taste_tags": 17,
+        "stall_favorites": 8,
+        "event_reviews": 3
+      },
+      "passed": true,
+      "elapsed_ms": 36
+    },
+    {
+      "name": "发起人占位、人数与评价数据一致",
+      "evidence": {
+        "missing_or_changed_host_registration": 0,
+        "over_capacity": 0,
+        "ineligible_review": 0
+      },
+      "passed": true,
+      "elapsed_ms": 36
+    },
+    {
+      "name": "alice 推荐排序与排除条件",
+      "evidence": [
+        {
+          "event_id": "2",
+          "title": "清淡素食午餐",
+          "meal_time": "2026-11-21 12:30:00",
+          "remaining_capacity": "2",
+          "match_score": "9"
+        },
+        {
+          "event_id": "1",
+          "title": "家常午餐拼桌",
+          "meal_time": "2026-11-21 12:00:00",
+          "remaining_capacity": "2",
+          "match_score": "6"
+        },
+        {
+          "event_id": "5",
+          "title": "晚餐香锅小队",
+          "meal_time": "2026-11-22 18:30:00",
+          "remaining_capacity": "3",
+          "match_score": "0"
+        },
+        {
+          "event_id": "6",
+          "title": "夜宵砂锅拼桌",
+          "meal_time": "2026-11-22 22:00:00",
+          "remaining_capacity": "1",
+          "match_score": "0"
+        },
+        {
+          "event_id": "10",
+          "title": "退出后可再报名",
+          "meal_time": "2026-11-24 19:00:00",
+          "remaining_capacity": "3",
+          "match_score": "0"
+        },
+        {
+          "event_id": "12",
+          "title": "下周早餐拼桌",
+          "meal_time": "2026-11-26 08:30:00",
+          "remaining_capacity": "1",
+          "match_score": "0"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 43
+    },
+    {
+      "name": "erin 无偏好用户推荐",
+      "evidence": [
+        {
+          "event_id": "4",
+          "title": "早餐面点约饭",
+          "meal_time": "2026-11-21 08:00:00",
+          "remaining_capacity": "1",
+          "match_score": "0"
+        },
+        {
+          "event_id": "1",
+          "title": "家常午餐拼桌",
+          "meal_time": "2026-11-21 12:00:00",
+          "remaining_capacity": "2",
+          "match_score": "0"
+        },
+        {
+          "event_id": "2",
+          "title": "清淡素食午餐",
+          "meal_time": "2026-11-21 12:30:00",
+          "remaining_capacity": "2",
+          "match_score": "0"
+        },
+        {
+          "event_id": "6",
+          "title": "夜宵砂锅拼桌",
+          "meal_time": "2026-11-22 22:00:00",
+          "remaining_capacity": "1",
+          "match_score": "0"
+        },
+        {
+          "event_id": "10",
+          "title": "退出后可再报名",
+          "meal_time": "2026-11-24 19:00:00",
+          "remaining_capacity": "3",
+          "match_score": "0"
+        },
+        {
+          "event_id": "11",
+          "title": "本人发起的素食饭局",
+          "meal_time": "2026-11-25 13:00:00",
+          "remaining_capacity": "2",
+          "match_score": "0"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 35
+    },
+    {
+      "name": "八个用户的个人统计",
+      "evidence": {
+        "1": [
+          2,
+          1
+        ],
+        "2": [
+          1,
+          1
+        ],
+        "3": [
+          2,
+          0
+        ],
+        "4": [
+          2,
+          1
+        ],
+        "5": [
+          1,
+          0
+        ],
+        "6": [
+          1,
+          0
+        ],
+        "7": [
+          1,
+          1
+        ],
+        "8": [
+          1,
+          1
+        ]
+      },
+      "passed": true,
+      "elapsed_ms": 33
+    },
+    {
+      "name": "全部食堂热力图",
+      "evidence": {
+        "cells": 168,
+        "total_events": 11,
+        "nonzero_cells": [
+          {
+            "weekday_no": "2",
+            "hour_no": "19",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "3",
+            "hour_no": "13",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "3",
+            "hour_no": "18",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "4",
+            "hour_no": "8",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "4",
+            "hour_no": "12",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "6",
+            "hour_no": "8",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "6",
+            "hour_no": "12",
+            "event_count": "2"
+          },
+          {
+            "weekday_no": "6",
+            "hour_no": "18",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "7",
+            "hour_no": "18",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "7",
+            "hour_no": "22",
+            "event_count": "1"
+          }
+        ]
+      },
+      "passed": true,
+      "elapsed_ms": 32
+    },
+    {
+      "name": "第一食堂热力图",
+      "evidence": {
+        "cells": 168,
+        "total_events": 3,
+        "nonzero_cells": [
+          {
+            "weekday_no": "6",
+            "hour_no": "12",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "6",
+            "hour_no": "18",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "7",
+            "hour_no": "18",
+            "event_count": "1"
+          }
+        ]
+      },
+      "passed": true,
+      "elapsed_ms": 31
+    },
+    {
+      "name": "第二食堂热力图",
+      "evidence": {
+        "cells": 168,
+        "total_events": 5,
+        "nonzero_cells": [
+          {
+            "weekday_no": "3",
+            "hour_no": "13",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "4",
+            "hour_no": "8",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "4",
+            "hour_no": "12",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "6",
+            "hour_no": "8",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "6",
+            "hour_no": "12",
+            "event_count": "1"
+          }
+        ]
+      },
+      "passed": true,
+      "elapsed_ms": 33
+    },
+    {
+      "name": "第三食堂热力图",
+      "evidence": {
+        "cells": 168,
+        "total_events": 3,
+        "nonzero_cells": [
+          {
+            "weekday_no": "2",
+            "hour_no": "19",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "3",
+            "hour_no": "18",
+            "event_count": "1"
+          },
+          {
+            "weekday_no": "7",
+            "hour_no": "22",
+            "event_count": "1"
+          }
+        ]
+      },
+      "passed": true,
+      "elapsed_ms": 37
+    },
+    {
+      "name": "非空 users.username",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "非空 users.nickname",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "非空 users.password_hash",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "非空 users.created_at",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "非空 canteens.canteen_name",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "非空 stalls.canteen_id",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "非空 stalls.stall_name",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "非空 dining_events.host_user_id",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "非空 dining_events.stall_id",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 27
+    },
+    {
+      "name": "非空 dining_events.title",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "非空 dining_events.meal_time",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 28
+    },
+    {
+      "name": "非空 dining_events.capacity",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "非空 dining_events.created_at",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "非空 registrations.event_id",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "非空 registrations.user_id",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "非空 registrations.registration_status",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "非空 registrations.last_joined_at",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 23
+    },
+    {
+      "name": "非空 taste_tags.tag_name",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "非空 user_taste_preferences.user_id",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "非空 user_taste_preferences.tag_id",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "非空 event_taste_tags.event_id",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "非空 event_taste_tags.tag_id",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "非空 stall_favorites.user_id",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "非空 stall_favorites.stall_id",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "非空 stall_favorites.favorited_at",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "非空 event_reviews.event_id",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "非空 event_reviews.user_id",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "非空 event_reviews.rating",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "非空 event_reviews.reviewed_at",
+      "evidence": {
+        "expected_error": 1048,
+        "actual_error": 1048,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "主键重复 users",
+      "evidence": {
+        "expected_error": 1062,
+        "actual_error": 1062,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "主键重复 canteens",
+      "evidence": {
+        "expected_error": 1062,
+        "actual_error": 1062,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "主键重复 stalls",
+      "evidence": {
+        "expected_error": 1062,
+        "actual_error": 1062,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "主键重复 dining_events",
+      "evidence": {
+        "expected_error": 1062,
+        "actual_error": 1062,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "主键重复 registrations",
+      "evidence": {
+        "expected_error": 1062,
+        "actual_error": 1062,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "主键重复 taste_tags",
+      "evidence": {
+        "expected_error": 1062,
+        "actual_error": 1062,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "主键重复 user_taste_preferences",
+      "evidence": {
+        "expected_error": 1062,
+        "actual_error": 1062,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "主键重复 event_taste_tags",
+      "evidence": {
+        "expected_error": 1062,
+        "actual_error": 1062,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "主键重复 stall_favorites",
+      "evidence": {
+        "expected_error": 1062,
+        "actual_error": 1062,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "主键重复 event_reviews",
+      "evidence": {
+        "expected_error": 1062,
+        "actual_error": 1062,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "用户名唯一",
+      "evidence": {
+        "expected_error": 1062,
+        "actual_error": 1062,
+        "constraint": "uq_users_username"
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "标签名称唯一",
+      "evidence": {
+        "expected_error": 1062,
+        "actual_error": 1062,
+        "constraint": "uq_taste_tags_name"
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "外键 fk_stalls_canteen",
+      "evidence": {
+        "expected_error": 1452,
+        "actual_error": 1452,
+        "constraint": "fk_stalls_canteen"
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "外键 fk_events_host",
+      "evidence": {
+        "expected_error": 1452,
+        "actual_error": 1452,
+        "constraint": "fk_events_host"
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "外键 fk_events_stall",
+      "evidence": {
+        "expected_error": 1452,
+        "actual_error": 1452,
+        "constraint": "fk_events_stall"
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "外键 fk_registrations_event",
+      "evidence": {
+        "expected_error": 1452,
+        "actual_error": 1452,
+        "constraint": "fk_registrations_event"
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "外键 fk_registrations_user",
+      "evidence": {
+        "expected_error": 1452,
+        "actual_error": 1452,
+        "constraint": "fk_registrations_user"
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "外键 fk_user_preferences_user",
+      "evidence": {
+        "expected_error": 1452,
+        "actual_error": 1452,
+        "constraint": "fk_user_preferences_user"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "外键 fk_user_preferences_tag",
+      "evidence": {
+        "expected_error": 1452,
+        "actual_error": 1452,
+        "constraint": "fk_user_preferences_tag"
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "外键 fk_event_tags_event",
+      "evidence": {
+        "expected_error": 1452,
+        "actual_error": 1452,
+        "constraint": "fk_event_tags_event"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "外键 fk_event_tags_tag",
+      "evidence": {
+        "expected_error": 1452,
+        "actual_error": 1452,
+        "constraint": "fk_event_tags_tag"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "外键 fk_stall_favorites_user",
+      "evidence": {
+        "expected_error": 1452,
+        "actual_error": 1452,
+        "constraint": "fk_stall_favorites_user"
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "外键 fk_stall_favorites_stall",
+      "evidence": {
+        "expected_error": 1452,
+        "actual_error": 1452,
+        "constraint": "fk_stall_favorites_stall"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "外键 fk_reviews_registration",
+      "evidence": {
+        "expected_error": 1452,
+        "actual_error": 1452,
+        "constraint": "fk_reviews_registration"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "CHECK ck_users_username",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_users_username"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "CHECK ck_users_nickname",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_users_nickname"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "CHECK ck_users_preferred_slot",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_users_preferred_slot"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "CHECK ck_canteens_name",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_canteens_name"
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "CHECK ck_stalls_name",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_stalls_name"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "CHECK ck_events_title",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_events_title"
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "CHECK ck_events_capacity",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_events_capacity"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "CHECK ck_events_meal_time",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_events_meal_time"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "CHECK ck_events_cancel_time",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_events_cancel_time"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "CHECK ck_registrations_status",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_registrations_status"
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "CHECK ck_registrations_exit_time",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_registrations_exit_time"
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "CHECK ck_taste_tags_name",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_taste_tags_name"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "CHECK ck_reviews_rating",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_reviews_rating"
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "长度 users.username",
+      "evidence": {
+        "expected_error": 1406,
+        "actual_error": 1406,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "长度 users.nickname",
+      "evidence": {
+        "expected_error": 1406,
+        "actual_error": 1406,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "长度 users.password_hash",
+      "evidence": {
+        "expected_error": 1406,
+        "actual_error": 1406,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "长度 users.preferred_slot",
+      "evidence": {
+        "expected_error": 1406,
+        "actual_error": 1406,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 27
+    },
+    {
+      "name": "长度 canteens.canteen_name",
+      "evidence": {
+        "expected_error": 1406,
+        "actual_error": 1406,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 27
+    },
+    {
+      "name": "长度 stalls.stall_name",
+      "evidence": {
+        "expected_error": 1406,
+        "actual_error": 1406,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "长度 dining_events.title",
+      "evidence": {
+        "expected_error": 1406,
+        "actual_error": 1406,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "长度 dining_events.description",
+      "evidence": {
+        "expected_error": 1406,
+        "actual_error": 1406,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "长度 registrations.registration_status",
+      "evidence": {
+        "expected_error": 1406,
+        "actual_error": 1406,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 28
+    },
+    {
+      "name": "长度 taste_tags.tag_name",
+      "evidence": {
+        "expected_error": 1406,
+        "actual_error": 1406,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "长度 event_reviews.content",
+      "evidence": {
+        "expected_error": 1406,
+        "actual_error": 1406,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "报名状态区分大小写",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_registrations_status"
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "偏好时段区分大小写",
+      "evidence": {
+        "expected_error": 3819,
+        "actual_error": 3819,
+        "constraint": "ck_users_preferred_slot"
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "人数上限超过整数范围",
+      "evidence": {
+        "expected_error": 1264,
+        "actual_error": 1264,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 23
+    },
+    {
+      "name": "评分不能写负数",
+      "evidence": {
+        "expected_error": 1264,
+        "actual_error": 1264,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "食堂删除引用限制",
+      "evidence": {
+        "expected_error": 1451,
+        "actual_error": 1451,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "档口删除引用限制",
+      "evidence": {
+        "expected_error": 1451,
+        "actual_error": 1451,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "饭局删除引用限制",
+      "evidence": {
+        "expected_error": 1451,
+        "actual_error": 1451,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 24
+    },
+    {
+      "name": "评价引用的报名记录删除限制",
+      "evidence": {
+        "expected_error": 1451,
+        "actual_error": 1451,
+        "constraint": null
+      },
+      "passed": true,
+      "elapsed_ms": 23
+    },
+    {
+      "name": "发起人报名触发器",
+      "evidence": [
+        {
+          "host_rows": "1"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 28
+    },
+    {
+      "name": "退出后重新报名复用记录",
+      "evidence": [
+        {
+          "row_count": "1",
+          "registration_status": "JOINED",
+          "retained_exit_time": "1"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 30
+    },
+    {
+      "name": "取消保留报名记录",
+      "evidence": [
+        {
+          "row_count": "2",
+          "joined_count": "2"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 29
+    },
+    {
+      "name": "无人报名饭局的关联删除顺序",
+      "evidence": [
+        {
+          "event_count": "0"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 32
+    },
+    {
+      "name": "已退出用户仍影响删除资格",
+      "evidence": [
+        {
+          "prior_other_registration": "1"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 33
+    },
+    {
+      "name": "用户名区分大小写",
+      "evidence": [
+        {
+          "user_count": "2"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 33
+    },
+    {
+      "name": "验证后原始测试数据行数保持一致",
+      "evidence": {
+        "users": 8,
+        "canteens": 3,
+        "stalls": 6,
+        "dining_events": 12,
+        "registrations": 25,
+        "taste_tags": 6,
+        "user_taste_preferences": 12,
+        "event_taste_tags": 17,
+        "stall_favorites": 8,
+        "event_reviews": 3
+      },
+      "passed": true,
+      "elapsed_ms": 35
+    },
+    {
+      "name": "验证后业务数据仍一致",
+      "evidence": {
+        "missing_or_changed_host_registration": 0,
+        "over_capacity": 0,
+        "ineligible_review": 0
+      },
+      "passed": true,
+      "elapsed_ms": 36
+    },
+    {
+      "name": "执行计划 PLAN_PUBLIC",
+      "passed": true,
+      "evidence": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "dining_events",
+          "partitions": "NULL",
+          "type": "range",
+          "possible_keys": "idx_events_active_time,idx_events_stall_active_time",
+          "key": "idx_events_active_time",
+          "key_len": "11",
+          "ref": "NULL",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": "Using where; Using index"
+        }
+      ]
+    },
+    {
+      "name": "执行计划 PLAN_STALL",
+      "passed": true,
+      "evidence": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "dining_events",
+          "partitions": "NULL",
+          "type": "range",
+          "possible_keys": "idx_events_active_time,idx_events_stall_active_time",
+          "key": "idx_events_stall_active_time",
+          "key_len": "15",
+          "ref": "NULL",
+          "rows": "2",
+          "filtered": "100.00",
+          "Extra": "Using where; Using index"
+        }
+      ]
+    },
+    {
+      "name": "执行计划 PLAN_COUNTS",
+      "passed": true,
+      "evidence": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "registrations",
+          "partitions": "NULL",
+          "type": "ref",
+          "possible_keys": "PRIMARY,idx_registrations_event_status,idx_registrations_user_status",
+          "key": "idx_registrations_event_status",
+          "key_len": "30",
+          "ref": "const,const",
+          "rows": "2",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        }
+      ]
+    },
+    {
+      "name": "执行计划 PLAN_USER",
+      "passed": true,
+      "evidence": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "registrations",
+          "partitions": "NULL",
+          "type": "ref",
+          "possible_keys": "idx_registrations_event_status,idx_registrations_user_status",
+          "key": "idx_registrations_user_status",
+          "key_len": "4",
+          "ref": "const",
+          "rows": "6",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        }
+      ]
+    }
+  ],
+  "query_evidence": {
+    "OBJECTS": [
+      {
+        "object_type": "tables",
+        "actual_count": "10"
+      },
+      {
+        "object_type": "columns",
+        "actual_count": "39"
+      },
+      {
+        "object_type": "primary_keys",
+        "actual_count": "10"
+      },
+      {
+        "object_type": "unique_keys",
+        "actual_count": "2"
+      },
+      {
+        "object_type": "foreign_keys",
+        "actual_count": "12"
+      },
+      {
+        "object_type": "checks",
+        "actual_count": "13"
+      },
+      {
+        "object_type": "indexes",
+        "actual_count": "21"
+      },
+      {
+        "object_type": "triggers",
+        "actual_count": "1"
+      }
+    ],
+    "ROW_COUNTS": [
+      {
+        "table_name": "users",
+        "actual_count": "8"
+      },
+      {
+        "table_name": "canteens",
+        "actual_count": "3"
+      },
+      {
+        "table_name": "stalls",
+        "actual_count": "6"
+      },
+      {
+        "table_name": "dining_events",
+        "actual_count": "12"
+      },
+      {
+        "table_name": "registrations",
+        "actual_count": "25"
+      },
+      {
+        "table_name": "taste_tags",
+        "actual_count": "6"
+      },
+      {
+        "table_name": "user_taste_preferences",
+        "actual_count": "12"
+      },
+      {
+        "table_name": "event_taste_tags",
+        "actual_count": "17"
+      },
+      {
+        "table_name": "stall_favorites",
+        "actual_count": "8"
+      },
+      {
+        "table_name": "event_reviews",
+        "actual_count": "3"
+      }
+    ],
+    "INVARIANTS": [
+      {
+        "rule_name": "missing_or_changed_host_registration",
+        "violation_count": "0"
+      },
+      {
+        "rule_name": "over_capacity",
+        "violation_count": "0"
+      },
+      {
+        "rule_name": "ineligible_review",
+        "violation_count": "0"
+      }
+    ],
+    "recommendations_user_1": [
+      {
+        "event_id": "2",
+        "title": "清淡素食午餐",
+        "meal_time": "2026-11-21 12:30:00",
+        "remaining_capacity": "2",
+        "match_score": "9"
+      },
+      {
+        "event_id": "1",
+        "title": "家常午餐拼桌",
+        "meal_time": "2026-11-21 12:00:00",
+        "remaining_capacity": "2",
+        "match_score": "6"
+      },
+      {
+        "event_id": "5",
+        "title": "晚餐香锅小队",
+        "meal_time": "2026-11-22 18:30:00",
+        "remaining_capacity": "3",
+        "match_score": "0"
+      },
+      {
+        "event_id": "6",
+        "title": "夜宵砂锅拼桌",
+        "meal_time": "2026-11-22 22:00:00",
+        "remaining_capacity": "1",
+        "match_score": "0"
+      },
+      {
+        "event_id": "10",
+        "title": "退出后可再报名",
+        "meal_time": "2026-11-24 19:00:00",
+        "remaining_capacity": "3",
+        "match_score": "0"
+      },
+      {
+        "event_id": "12",
+        "title": "下周早餐拼桌",
+        "meal_time": "2026-11-26 08:30:00",
+        "remaining_capacity": "1",
+        "match_score": "0"
+      }
+    ],
+    "recommendations_user_5": [
+      {
+        "event_id": "4",
+        "title": "早餐面点约饭",
+        "meal_time": "2026-11-21 08:00:00",
+        "remaining_capacity": "1",
+        "match_score": "0"
+      },
+      {
+        "event_id": "1",
+        "title": "家常午餐拼桌",
+        "meal_time": "2026-11-21 12:00:00",
+        "remaining_capacity": "2",
+        "match_score": "0"
+      },
+      {
+        "event_id": "2",
+        "title": "清淡素食午餐",
+        "meal_time": "2026-11-21 12:30:00",
+        "remaining_capacity": "2",
+        "match_score": "0"
+      },
+      {
+        "event_id": "6",
+        "title": "夜宵砂锅拼桌",
+        "meal_time": "2026-11-22 22:00:00",
+        "remaining_capacity": "1",
+        "match_score": "0"
+      },
+      {
+        "event_id": "10",
+        "title": "退出后可再报名",
+        "meal_time": "2026-11-24 19:00:00",
+        "remaining_capacity": "3",
+        "match_score": "0"
+      },
+      {
+        "event_id": "11",
+        "title": "本人发起的素食饭局",
+        "meal_time": "2026-11-25 13:00:00",
+        "remaining_capacity": "2",
+        "match_score": "0"
+      }
+    ],
+    "PERSONAL_STATS": [
+      {
+        "user_id": "1",
+        "username": "alice",
+        "initiated_count": "2",
+        "participated_count": "1"
+      },
+      {
+        "user_id": "2",
+        "username": "bob",
+        "initiated_count": "1",
+        "participated_count": "1"
+      },
+      {
+        "user_id": "3",
+        "username": "carol",
+        "initiated_count": "2",
+        "participated_count": "0"
+      },
+      {
+        "user_id": "4",
+        "username": "dave",
+        "initiated_count": "2",
+        "participated_count": "1"
+      },
+      {
+        "user_id": "5",
+        "username": "erin",
+        "initiated_count": "1",
+        "participated_count": "0"
+      },
+      {
+        "user_id": "6",
+        "username": "frank",
+        "initiated_count": "1",
+        "participated_count": "0"
+      },
+      {
+        "user_id": "7",
+        "username": "grace",
+        "initiated_count": "1",
+        "participated_count": "1"
+      },
+      {
+        "user_id": "8",
+        "username": "heidi",
+        "initiated_count": "1",
+        "participated_count": "1"
+      }
+    ],
+    "heatmap_None": [
+      {
+        "weekday_no": "2",
+        "hour_no": "19",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "3",
+        "hour_no": "13",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "3",
+        "hour_no": "18",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "4",
+        "hour_no": "8",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "4",
+        "hour_no": "12",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "6",
+        "hour_no": "8",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "6",
+        "hour_no": "12",
+        "event_count": "2"
+      },
+      {
+        "weekday_no": "6",
+        "hour_no": "18",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "7",
+        "hour_no": "18",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "7",
+        "hour_no": "22",
+        "event_count": "1"
+      }
+    ],
+    "heatmap_1": [
+      {
+        "weekday_no": "6",
+        "hour_no": "12",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "6",
+        "hour_no": "18",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "7",
+        "hour_no": "18",
+        "event_count": "1"
+      }
+    ],
+    "heatmap_2": [
+      {
+        "weekday_no": "3",
+        "hour_no": "13",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "4",
+        "hour_no": "8",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "4",
+        "hour_no": "12",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "6",
+        "hour_no": "8",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "6",
+        "hour_no": "12",
+        "event_count": "1"
+      }
+    ],
+    "heatmap_3": [
+      {
+        "weekday_no": "2",
+        "hour_no": "19",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "3",
+        "hour_no": "18",
+        "event_count": "1"
+      },
+      {
+        "weekday_no": "7",
+        "hour_no": "22",
+        "event_count": "1"
+      }
+    ],
+    "EVENTS": [
+      {
+        "event_id": "1",
+        "title": "家常午餐拼桌",
+        "canteen_name": "第一食堂",
+        "stall_name": "家常小炒",
+        "meal_time": "2026-11-21 12:00:00",
+        "capacity": "4",
+        "joined_count": "2",
+        "remaining_capacity": "2",
+        "event_status": "UPCOMING"
+      },
+      {
+        "event_id": "2",
+        "title": "清淡素食午餐",
+        "canteen_name": "第二食堂",
+        "stall_name": "素食轻食",
+        "meal_time": "2026-11-21 12:30:00",
+        "capacity": "4",
+        "joined_count": "2",
+        "remaining_capacity": "2",
+        "event_status": "UPCOMING"
+      },
+      {
+        "event_id": "3",
+        "title": "香锅双人饭局",
+        "canteen_name": "第一食堂",
+        "stall_name": "麻辣香锅",
+        "meal_time": "2026-11-21 18:00:00",
+        "capacity": "2",
+        "joined_count": "2",
+        "remaining_capacity": "0",
+        "event_status": "UPCOMING"
+      },
+      {
+        "event_id": "4",
+        "title": "早餐面点约饭",
+        "canteen_name": "第二食堂",
+        "stall_name": "面点早餐",
+        "meal_time": "2026-11-21 08:00:00",
+        "capacity": "3",
+        "joined_count": "2",
+        "remaining_capacity": "1",
+        "event_status": "UPCOMING"
+      },
+      {
+        "event_id": "5",
+        "title": "晚餐香锅小队",
+        "canteen_name": "第一食堂",
+        "stall_name": "麻辣香锅",
+        "meal_time": "2026-11-22 18:30:00",
+        "capacity": "4",
+        "joined_count": "1",
+        "remaining_capacity": "3",
+        "event_status": "UPCOMING"
+      },
+      {
+        "event_id": "6",
+        "title": "夜宵砂锅拼桌",
+        "canteen_name": "第三食堂",
+        "stall_name": "夜宵砂锅",
+        "meal_time": "2026-11-22 22:00:00",
+        "capacity": "3",
+        "joined_count": "2",
+        "remaining_capacity": "1",
+        "event_status": "UPCOMING"
+      },
+      {
+        "event_id": "7",
+        "title": "昨日素食午餐",
+        "canteen_name": "第二食堂",
+        "stall_name": "素食轻食",
+        "meal_time": "2026-11-19 12:00:00",
+        "capacity": "4",
+        "joined_count": "3",
+        "remaining_capacity": "1",
+        "event_status": "STARTED"
+      },
+      {
+        "event_id": "8",
+        "title": "前日盖饭晚餐",
+        "canteen_name": "第三食堂",
+        "stall_name": "特色盖饭",
+        "meal_time": "2026-11-18 18:00:00",
+        "capacity": "3",
+        "joined_count": "2",
+        "remaining_capacity": "1",
+        "event_status": "STARTED"
+      },
+      {
+        "event_id": "9",
+        "title": "已取消的午餐",
+        "canteen_name": "第一食堂",
+        "stall_name": "家常小炒",
+        "meal_time": "2026-11-23 12:00:00",
+        "capacity": "4",
+        "joined_count": "2",
+        "remaining_capacity": "2",
+        "event_status": "CANCELLED"
+      },
+      {
+        "event_id": "10",
+        "title": "退出后可再报名",
+        "canteen_name": "第三食堂",
+        "stall_name": "特色盖饭",
+        "meal_time": "2026-11-24 19:00:00",
+        "capacity": "4",
+        "joined_count": "1",
+        "remaining_capacity": "3",
+        "event_status": "UPCOMING"
+      },
+      {
+        "event_id": "11",
+        "title": "本人发起的素食饭局",
+        "canteen_name": "第二食堂",
+        "stall_name": "素食轻食",
+        "meal_time": "2026-11-25 13:00:00",
+        "capacity": "3",
+        "joined_count": "1",
+        "remaining_capacity": "2",
+        "event_status": "UPCOMING"
+      },
+      {
+        "event_id": "12",
+        "title": "下周早餐拼桌",
+        "canteen_name": "第二食堂",
+        "stall_name": "面点早餐",
+        "meal_time": "2026-11-26 08:30:00",
+        "capacity": "3",
+        "joined_count": "2",
+        "remaining_capacity": "1",
+        "event_status": "UPCOMING"
+      }
+    ]
+  }
+}
